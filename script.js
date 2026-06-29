@@ -248,5 +248,60 @@ interactiveElements.forEach(element => {
         innerNavToggleBtn.addEventListener('click', toggleNavBar);
         projectCloseBtn.addEventListener('click', closeProjectWindow);
 
+        // Carousel functionality
+        function initializeCarousels() {
+            const videoGroups = document.querySelectorAll('.video-group');
+            
+            videoGroups.forEach(videoGroup => {
+                const prevBtn = videoGroup.querySelector('.carousel-prev');
+                const nextBtn = videoGroup.querySelector('.carousel-next');
+                const container = videoGroup.querySelector('.video-carousel-container');
+                const iframes = container.querySelectorAll('iframe');
+                const indicatorsContainer = videoGroup.parentElement.querySelector('.carousel-indicators');
+                const dots = indicatorsContainer ? indicatorsContainer.querySelectorAll('.carousel-dot') : [];
+                
+                let currentIndex = 0;
+                
+                function showSlide(index) {
+                    // Wrap around if index is out of bounds
+                    if (index >= iframes.length) {
+                        currentIndex = 0;
+                    } else if (index < 0) {
+                        currentIndex = iframes.length - 1;
+                    } else {
+                        currentIndex = index;
+                    }
+                    
+                    // Remove active class from all iframes and dots
+                    iframes.forEach(iframe => iframe.classList.remove('active'));
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    
+                    // Add active class to current iframe and dot
+                    iframes[currentIndex].classList.add('active');
+                    if (dots[currentIndex]) {
+                        dots[currentIndex].classList.add('active');
+                    }
+                }
+                
+                // Previous button
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+                }
+                
+                // Next button
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+                }
+                
+                // Dot indicators
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => showSlide(index));
+                });
+            });
+        }
+        
+        // Initialize carousels
+        initializeCarousels();
+
 //        const nextProject = document.querySelector('.next-project');
 //        const previousProject = document.querySelector('previous-project');
