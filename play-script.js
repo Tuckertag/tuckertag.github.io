@@ -125,6 +125,28 @@ function enableRepulsionEffect() {
     });
 }
 
+document.addEventListener('click', (e) => {
+            const innerMargin = window.innerWidth * 0.1; // 10% margin on each side
+            const innerWidth = window.innerWidth * 0.8;
+            const innerHeight = window.innerHeight * 0.8;
+            const innerTop = window.innerHeight * 0.1;
+            
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+            
+            // Check if click is outside the inner 80% area
+            const isOutsideInnerArea = 
+                clickX < innerMargin || 
+                clickX > (innerMargin + innerWidth) || 
+                clickY < innerTop || 
+                clickY > (innerTop + innerHeight);
+            
+            // Only close if project window is open and click is outside
+            if (isOutsideInnerArea && projectBackground.style.display === 'flex') {
+                closeProjectWindow();
+            }
+        });
+
 interactiveElements.forEach(element => {
     element.addEventListener('contextmenu', (e) => {
         e.preventDefault();

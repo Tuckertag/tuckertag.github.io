@@ -1130,4 +1130,10 @@ html {
     .play-divider {
         margin-top: 170cqw;
     }
+
+    .main-shot-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3cqw;
+    }
 }
