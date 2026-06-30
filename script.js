@@ -217,6 +217,7 @@ interactiveElements.forEach(element => {
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
+            document.body.style.overflow = 'auto';
         }
         
         const projectLinks = document.querySelectorAll('.project-link');
@@ -237,6 +238,7 @@ interactiveElements.forEach(element => {
             projectWindow.scrollTop = 0; // Reset scroll position to top
             projectText.textContent=projects[index].name;
             projectYear.textContent = projects[index].year;
+            document.body.style.overflow = 'hidden';
         }
 
         // Calculate scale on load and on window resize
