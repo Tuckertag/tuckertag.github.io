@@ -1,4 +1,6 @@
-        const mainContent = document.querySelector('.main-content');
+document.body.style.overflow = 'auto'; // Enable scrolling on the body
+
+       const mainContent = document.querySelector('.main-content');
         const navbar = document.querySelector('.navbar');
         const navToggleBtn = document.querySelector('.nav-toggle-btn');
         const innerNavToggleBtn = document.querySelector('.inner-nav-toggle-btn');
