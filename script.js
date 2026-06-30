@@ -23,6 +23,7 @@ if (videoElement) {
 
 function startVideoPlayback() {
     // Trigger fadeInRiseUp animation on all elements with the animation
+    document.body.style.overflow = 'auto'
     const introLines = document.querySelectorAll('.intro-line');
     const thumbnailTexts = document.querySelectorAll('.thumbnail-text');
     const bigThumbnails = document.querySelectorAll('.big-thumbnail');
