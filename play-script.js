@@ -1,4 +1,14 @@
-document.body.style.overflow = 'auto'; // Enable scrolling on the body
+ document.body.style.overflow = 'auto'
+    const introLines = document.querySelectorAll('.intro-line');
+    const thumbnailTexts = document.querySelectorAll('.thumbnail-text');
+    const bigThumbnails = document.querySelectorAll('.big-thumbnail');
+    const smallThumbnails = document.querySelectorAll('.small-thumbnail');
+    
+    // Add animate class to trigger animations
+    introLines.forEach(el => el.classList.add('animate'));
+    thumbnailTexts.forEach(el => el.classList.add('animate'));
+    bigThumbnails.forEach(el => el.classList.add('animate'));
+    smallThumbnails.forEach(el => el.classList.add('animate'));
 
        const mainContent = document.querySelector('.main-content');
         const navbar = document.querySelector('.navbar');
