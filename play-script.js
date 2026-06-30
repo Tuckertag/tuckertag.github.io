@@ -181,7 +181,7 @@ interactiveElements.forEach(element => {
             document.body.style.overflow = 'auto';
         }
 
-        const projectLinks = document.querySelectorAll('.play-thumbnail');
+        const projectLinks = document.querySelectorAll('.project-link');
         projectLinks.forEach((link, index) => {
             link.addEventListener('click', () => openProjectWindow(index));
         });

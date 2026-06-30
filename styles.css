@@ -606,6 +606,8 @@ html {
             font-family: DIN;
             color: white;
             margin-right: 16cqw;
+            line-break: normal;
+            width: 70cqw;
         }
 
         .pepsi-text a {
