@@ -52,6 +52,10 @@ html {
             cursor: grabbing;
         }
 
+        body.loading-active {
+            overflow: hidden;
+        }
+
         .main-content {
             flex-grow: 1;
             display: flex;
@@ -64,6 +68,19 @@ html {
 
         .main-content.nav-open {
             transform: scale(var(--nav-scale));
+        }
+
+        .load-screen{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .navbar {
@@ -597,8 +614,6 @@ html {
             text-decoration: underline;
             font-size: 28pt;
         }
-
-
 
         .pepsi-text {
             margin-left: 4cqw;
