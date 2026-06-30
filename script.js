@@ -22,7 +22,13 @@ Promise.all([
     sessionStorage.setItem('play-js', js);
 });
 
-const images = ['TZ_PlayPage Animation.webm', 'Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
+const videoSrc = 'TZ_PlayPage Animation.webm';
+const hiddenVideo = document.createElement('video');
+hiddenVideo.src = videoSrc;
+hiddenVideo.style.display = 'none';
+document.body.appendChild(hiddenVideo);
+
+const images = ['Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
 images.forEach(src => {
     const img = new Image();
     img.src = src; // Browser loads it in background
