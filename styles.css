@@ -818,7 +818,7 @@ html {
 
         .gfx-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 1.5cqw;
             padding: 0 2cqw;
             width: 70cqw;
@@ -833,7 +833,7 @@ html {
 
         .shot-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5cqw;
             padding: 0 2cqw;
             width: 70cqw;
@@ -848,7 +848,7 @@ html {
 
         .main-shot-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5cqw;
             padding: 0 2cqw;
             width: 70cqw;
@@ -858,6 +858,27 @@ html {
         .main-shot-grid iframe {
             width: 100%;
             aspect-ratio: 16 / 9;
+            border: .5px solid #ffffff;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5cqw;
+            padding: 0 2cqw;
+            width: 70cqw;
+            margin-left: 3.5cqw;
+        }
+
+        .hero-grid video {
+            width: 100%;
+            height: auto;
+            border: .5px solid #ffffff;
+        }
+
+        .hero-grid img {
+            width: 100%;
+            height: auto;
             border: .5px solid #ffffff;
         }
 
@@ -1095,11 +1116,6 @@ html {
         grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     }
 
-    .shot-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-
     h1{
         font-size: 20pt;
     }
@@ -1131,9 +1147,7 @@ html {
         margin-top: 170cqw;
     }
 
-    .main-shot-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3cqw;
+    .hero-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 }
