@@ -3,6 +3,9 @@ window.addEventListener('load', function() {
     if (loaderWrapper) {
         loaderWrapper.style.opacity = '0';
         loaderWrapper.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            loaderWrapper.style.display = 'none';
+        }, 100);
     }
 });
 
