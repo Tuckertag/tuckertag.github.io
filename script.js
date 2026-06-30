@@ -290,7 +290,7 @@ interactiveElements.forEach(element => {
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
-            document.body.style.overflow = '';
+            document.body.style.overflow = 'auto';
         }
         
         const projectLinks = document.querySelectorAll('.project-link');
