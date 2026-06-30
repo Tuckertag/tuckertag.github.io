@@ -1,3 +1,11 @@
+window.addEventListener('load', function() {
+    const loaderWrapper = document.querySelector(".loader-wrapper");
+    if (loaderWrapper) {
+        loaderWrapper.style.opacity = '0';
+        loaderWrapper.style.transition = 'opacity 0.5s ease';
+    }
+});
+
 //        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
         const LinesLandingElement = document.getElementById('lines-landing');
