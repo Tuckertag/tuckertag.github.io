@@ -22,6 +22,18 @@ if (videoElement) {
 }
 
 function startVideoPlayback() {
+    // Trigger fadeInRiseUp animation on all elements with the animation
+    const introLines = document.querySelectorAll('.intro-line');
+    const thumbnailTexts = document.querySelectorAll('.thumbnail-text');
+    const bigThumbnails = document.querySelectorAll('.big-thumbnail');
+    const smallThumbnails = document.querySelectorAll('.small-thumbnail');
+    
+    // Add animate class to trigger animations
+    introLines.forEach(el => el.classList.add('animate'));
+    thumbnailTexts.forEach(el => el.classList.add('animate'));
+    bigThumbnails.forEach(el => el.classList.add('animate'));
+    smallThumbnails.forEach(el => el.classList.add('animate'));
+    
     if (videoElement) {
         videoElement.play().catch(error => {
             console.error('Error playing video:', error);

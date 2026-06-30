@@ -258,16 +258,19 @@ html {
         }
         .intro-line {
             display: block;
-            animation: fadeInRiseUp 0.2s ease-out forwards;
             opacity: 0;
             margin: 0;
             padding: 0;
         }
 
-        .intro-line:nth-of-type(1) { animation-delay: 0s; }
-        .intro-line:nth-of-type(2) { animation-delay: 0.1s; }
-        .intro-line:nth-of-type(3) { animation-delay: 0.2s; }
-        .intro-line:nth-of-type(4) { animation-delay: 0.3s; }
+        .intro-line.animate {
+            animation: fadeInRiseUp 0.2s ease-out forwards;
+        }
+
+        .intro-line:nth-of-type(1).animate { animation-delay: 0s; }
+        .intro-line:nth-of-type(2).animate { animation-delay: 0.1s; }
+        .intro-line:nth-of-type(3).animate { animation-delay: 0.2s; }
+        .intro-line:nth-of-type(4).animate { animation-delay: 0.3s; }
 
         @keyframes fadeInRiseUp {
             from{
@@ -323,6 +326,9 @@ html {
             text-decoration: underline;
             display: block;
             opacity: 0;
+        }
+
+        .thumbnail-text.animate {
             animation: fadeInRiseUp 0.3s ease-out forwards;
             animation-delay: 0.3s;
         }
@@ -334,6 +340,9 @@ html {
             padding-top: 5cqw;
             opacity: 0;
             display: block;
+        }
+
+        .big-thumbnail.animate {
             animation: thumbnailRiseUp 0.3s ease-out forwards;
             animation-delay: 0.1s;
         }
@@ -366,6 +375,9 @@ html {
             padding-top: 17.5cqw;
             opacity: 0;
             display: block;
+        }
+
+        .small-thumbnail.animate {
             animation: thumbnailRiseUp 0.3s ease-out forwards;
             animation-delay: 0.2s;
         }
