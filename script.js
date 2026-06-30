@@ -13,6 +13,21 @@ window.addEventListener('load', function() {
     }
 });
 
+// Load 3 files in the background
+Promise.all([
+    fetch('play.html').then(r => r.text()),
+    fetch('play-script.js').then(r => r.text())
+]).then(([html, js]) => {
+    sessionStorage.setItem('play-html', html);
+    sessionStorage.setItem('play-js', js);
+});
+
+const images = ['TZ_PlayPage Animation.webm', 'Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
+images.forEach(src => {
+    const img = new Image();
+    img.src = src; // Browser loads it in background
+});
+
 //        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
 
