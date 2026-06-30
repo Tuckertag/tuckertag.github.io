@@ -3,6 +3,10 @@ window.addEventListener('load', function() {
     if (loaderWrapper) {
         loaderWrapper.style.opacity = '0';
         loaderWrapper.style.transition = 'opacity 0.5s ease';
+        
+        // Trigger video playback when loader fades out
+        startVideoPlayback();
+        
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
         }, 100);
@@ -11,6 +15,20 @@ window.addEventListener('load', function() {
 
 //        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
+
+// Ensure video starts paused
+if (videoElement) {
+    videoElement.pause();
+}
+
+function startVideoPlayback() {
+    if (videoElement) {
+        videoElement.play().catch(error => {
+            console.error('Error playing video:', error);
+        });
+    }
+}
+
         const LinesLandingElement = document.getElementById('lines-landing');
         const tuckerLandingElement = document.getElementById('tucker-landing');
         const zieglerLandingElement = document.getElementById('ziegler-landing');
@@ -18,6 +36,15 @@ const videoElement = document.getElementById('preview-video');
         const itLandingElement = document.getElementById('it-landing');
         const workLandingElement = document.getElementById('work-landing');
         const slayLandingElement = document.getElementById('slay-landing');
+
+        // Set initial opacity to 0 for images so they're hidden until video ends
+        LinesLandingElement.style.opacity = '0';
+        tuckerLandingElement.style.opacity = '0';
+        zieglerLandingElement.style.opacity = '0';
+        makeLandingElement.style.opacity = '0';
+        itLandingElement.style.opacity = '0';
+        workLandingElement.style.opacity = '0';
+        slayLandingElement.style.opacity = '0';
 
         const interactiveElements = [
             tuckerLandingElement,
@@ -221,6 +248,28 @@ interactiveElements.forEach(element => {
             }
         ];  
 
+        document.addEventListener('click', (e) => {
+            const innerMargin = window.innerWidth * 0.1; // 10% margin on each side
+            const innerWidth = window.innerWidth * 0.8;
+            const innerHeight = window.innerHeight * 0.8;
+            const innerTop = window.innerHeight * 0.1;
+            
+            const clickX = e.clientX;
+            const clickY = e.clientY;
+            
+            // Check if click is outside the inner 80% area
+            const isOutsideInnerArea = 
+                clickX < innerMargin || 
+                clickX > (innerMargin + innerWidth) || 
+                clickY < innerTop || 
+                clickY > (innerTop + innerHeight);
+            
+            // Only close if project window is open and click is outside
+            if (isOutsideInnerArea && projectBackground.style.display === 'flex') {
+                closeProjectWindow();
+            }
+        });
+
         const projectBackground = document.querySelector('.project-background');
 
         function closeProjectWindow() {
@@ -228,7 +277,7 @@ interactiveElements.forEach(element => {
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = '';
         }
         
         const projectLinks = document.querySelectorAll('.project-link');
@@ -260,84 +309,6 @@ interactiveElements.forEach(element => {
         navToggleBtn.addEventListener('click', toggleNavBar);
         innerNavToggleBtn.addEventListener('click', toggleNavBar);
         projectCloseBtn.addEventListener('click', closeProjectWindow);
-
-        // Close project window when clicking outside the inner 80% of the screen
-        document.addEventListener('click', (e) => {
-            const innerMargin = window.innerWidth * 0.1; // 10% margin on each side
-            const innerWidth = window.innerWidth * 0.8;
-            const innerHeight = window.innerHeight * 0.8;
-            const innerTop = window.innerHeight * 0.1;
-            
-            const clickX = e.clientX;
-            const clickY = e.clientY;
-            
-            // Check if click is outside the inner 80% area
-            const isOutsideInnerArea = 
-                clickX < innerMargin || 
-                clickX > (innerMargin + innerWidth) || 
-                clickY < innerTop || 
-                clickY > (innerTop + innerHeight);
-            
-            // Only close if project window is open and click is outside
-            if (isOutsideInnerArea && projectBackground.style.display === 'flex') {
-                closeProjectWindow();
-            }
-        });
-
-        // Carousel functionality
-        function initializeCarousels() {
-            const videoGroups = document.querySelectorAll('.video-group');
-            
-            videoGroups.forEach(videoGroup => {
-                const prevBtn = videoGroup.querySelector('.carousel-prev');
-                const nextBtn = videoGroup.querySelector('.carousel-next');
-                const container = videoGroup.querySelector('.video-carousel-container');
-                const iframes = container.querySelectorAll('iframe');
-                const indicatorsContainer = videoGroup.parentElement.querySelector('.carousel-indicators');
-                const dots = indicatorsContainer ? indicatorsContainer.querySelectorAll('.carousel-dot') : [];
-                
-                let currentIndex = 0;
-                
-                function showSlide(index) {
-                    // Wrap around if index is out of bounds
-                    if (index >= iframes.length) {
-                        currentIndex = 0;
-                    } else if (index < 0) {
-                        currentIndex = iframes.length - 1;
-                    } else {
-                        currentIndex = index;
-                    }
-                    
-                    // Remove active class from all iframes and dots
-                    iframes.forEach(iframe => iframe.classList.remove('active'));
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    
-                    // Add active class to current iframe and dot
-                    iframes[currentIndex].classList.add('active');
-                    if (dots[currentIndex]) {
-                        dots[currentIndex].classList.add('active');
-                    }
-                }
-                
-                // Previous button
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
-                }
-                
-                // Next button
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
-                }
-                
-                // Dot indicators
-                dots.forEach((dot, index) => {
-                    dot.addEventListener('click', () => showSlide(index));
-                });
-            });
-        }
-        
-        // Initialize carousels
-        initializeCarousels();
 
 //        const nextProject = document.querySelector('.next-project');
 //        const previousProject = document.querySelector('previous-project');
