@@ -8,6 +8,16 @@ html {
             font-display: fallback;
         }
 
+        .blank-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: 999;
+        }
+
         body {
             margin: 0;
             padding: 0;

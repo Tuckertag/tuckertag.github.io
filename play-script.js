@@ -1,14 +1,18 @@
  window.addEventListener('load', function() {
     const loaderWrapper = document.querySelector(".loader-wrapper");
+    const blankScreen = document.querySelector(".blank-screen");
     if (loaderWrapper) {
         loaderWrapper.style.opacity = '0';
         loaderWrapper.style.transition = 'opacity 0.5s ease';
+        blankScreen.style.opacity = '0';
+        blankScreen.style.transition = 'opacity 0.5s ease';
         
         // Trigger video playback when loader fades out
         startVideoPlayback();
         
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
+            blankScreen.style.display = 'none';
         }, 100);
     }
 });
