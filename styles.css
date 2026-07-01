@@ -1230,4 +1230,8 @@ html {
         gap: 20px;
         z-index: 10;
     }
+
+    .image-grid {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
 }
