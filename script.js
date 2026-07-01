@@ -267,7 +267,7 @@ interactiveElements.forEach(element => {
                 name: "Tenstorrent",
                 content: document.querySelector('.tenstorrent-project'),
                 hash: 'Tenstorrent',
-                year: "2025-2026"
+                year: "2025"
             },
             {
                 name: "PostCon",

@@ -331,15 +331,6 @@ html {
             margin-bottom: 5cqw;
         }
 
-        .thumbnail-text {
-            color: white;
-            font-family: DIN;
-            font-size: 1.2cqw;
-            text-decoration: underline;
-            display: block;
-            opacity: 0;
-        }
-
         .thumbnail-text.animate {
             animation: fadeInRiseUp 0.3s ease-out forwards;
             animation-delay: 0.3s;
@@ -352,11 +343,13 @@ html {
             padding-top: 5cqw;
             opacity: 0;
             display: block;
+            transform: scale(1);
+            transform-origin: center center;
+            transition: transform 0.3s ease-out;
         }
 
         .big-thumbnail.animate {
             animation: thumbnailRiseUp 0.3s ease-out forwards;
-            animation-delay: 0.1s;
         }
         
         .big-thumbnail .thumbnail {
@@ -387,6 +380,9 @@ html {
             padding-top: 17.5cqw;
             opacity: 0;
             display: block;
+            transform: scale(1);
+            transform-origin: center center;
+            transition: transform 0.3s ease-out;
         }
 
         .small-thumbnail.animate {
@@ -400,23 +396,26 @@ html {
             display: block;
         }
 
-        .thumbnail:hover {
-            transform: scale(1.01);
-            transition: transform 0.3s ease-out;
-            cursor: pointer;
-        }
-
-        .thumbnail {
+        .thumbnail-wrapper,
+        .play-thumbnail-item {
             transform: scale(1);
             transition: transform 0.3s ease-out;
         }
         
-        .big-thumbnail:hover .thumbnail,
-        .small-thumbnail:hover .thumbnail,
-        .play-thumbnail .thumbnail {
-            transform: scale(1.01);
-            transition: transform 0.3s ease-out;
+        .thumbnail-wrapper:hover,
+        .play-thumbnail-item:hover {
+            transform: scale(1.01) !important;
             cursor: pointer;
+            transition: transform 0.3s ease-out;
+        }
+
+        .thumbnail-text {
+            color: white;
+            font-family: DIN;
+            font-size: 1.2cqw;
+            text-decoration: underline;
+            display: block;
+            opacity: 0;
         }
 
         .thumbnail-text:hover {
@@ -1192,5 +1191,10 @@ html {
 
     .hero-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .loader-wrapper {
+        top:-70cqw;
+        height: 150vh;
     }
 }
