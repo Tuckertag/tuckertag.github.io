@@ -346,3 +346,87 @@ interactiveElements.forEach(element => {
 
 //        const nextProject = document.querySelector('.next-project');
 //        const previousProject = document.querySelector('previous-project');
+
+        // Carousel functionality
+        function initializeCarousels() {
+            const videoGroups = document.querySelectorAll('.video-group');
+            
+            videoGroups.forEach(videoGroup => {
+                // Skip if already initialized to prevent duplicate listeners
+                if (videoGroup.dataset.carouselInitialized === 'true') {
+                    return;
+                }
+                
+                const container = videoGroup.querySelector('.video-carousel-container');
+                const iframes = container.querySelectorAll('iframe');
+                const prevBtn = videoGroup.querySelector('.carousel-prev');
+                const nextBtn = videoGroup.querySelector('.carousel-next');
+                const indicatorsContainer = videoGroup.parentElement.querySelector('.carousel-indicators');
+                const dots = indicatorsContainer ? indicatorsContainer.querySelectorAll('.carousel-dot') : [];
+                
+                // Store state on the element itself
+                videoGroup.dataset.carouselIndex = 0;
+                videoGroup.dataset.carouselInitialized = 'true';
+                
+                function updateCarousel(index) {
+                    const iframeCount = iframes.length;
+                    
+                    // Handle wrapping
+                    if (index < 0) {
+                        videoGroup.dataset.carouselIndex = iframeCount - 1;
+                    } else if (index >= iframeCount) {
+                        videoGroup.dataset.carouselIndex = 0;
+                    } else {
+                        videoGroup.dataset.carouselIndex = index;
+                    }
+                    
+                    const currentIndex = parseInt(videoGroup.dataset.carouselIndex);
+                    
+                    // Update iframes
+                    iframes.forEach((iframe, i) => {
+                        iframe.classList.remove('active');
+                        if (i === currentIndex) {
+                            iframe.classList.add('active');
+                        }
+                    });
+                    
+                    // Update dots
+                    dots.forEach((dot, i) => {
+                        dot.classList.remove('active');
+                        if (i === currentIndex) {
+                            dot.classList.add('active');
+                        }
+                    });
+                }
+                
+                // Previous button click
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const currentIdx = parseInt(videoGroup.dataset.carouselIndex);
+                        updateCarousel(currentIdx - 1);
+                    });
+                }
+                
+                // Next button click
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const currentIdx = parseInt(videoGroup.dataset.carouselIndex);
+                        updateCarousel(currentIdx + 1);
+                    });
+                }
+                
+                // Dot click
+                dots.forEach((dot, dotIndex) => {
+                    dot.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        updateCarousel(dotIndex);
+                    });
+                });
+            });
+        }
+        
+        // Initialize on page load
+        initializeCarousels();
+
