@@ -1019,18 +1019,24 @@ html {
             padding: 0 2cqw;
             width: 70cqw;
             margin-left: 3.5cqw;
+            flex-wrap: nowrap;
+            overflow-x: auto;
         }
 
         .gfx-row video {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
+            flex-shrink: 1;
+            min-width: 0;
         }
 
         .gfx-row img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
+            flex-shrink: 1;
+            min-width: 0;
         }
 
         .background-image {
