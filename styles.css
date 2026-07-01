@@ -448,6 +448,20 @@ html {
             border-top: 1px solid #ffffff;
         }
 
+        .play-footer {
+            position: absolute;
+            top: 80cqw;
+            left: -5%;
+            margin-bottom: 10cqw;
+            width: 110%;
+            display: flex;
+            justify-content: center;
+            gap: 3cqw;
+            padding: 1cqw 0;
+            z-index: 10;
+            border-top: 1px solid #ffffff;
+        }
+
         .footer-links {
             color: white;
             font-family: DIN;
@@ -1243,5 +1257,9 @@ html {
 
     .image-grid {
         grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    }
+
+    .play-footer {
+        top: 170cqw;
     }
 }
