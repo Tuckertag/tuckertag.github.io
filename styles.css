@@ -213,6 +213,7 @@ html {
             height: auto;
             opacity: 0;
             user-select: none;
+            pointer-events: none;
             transition: opacity 0.2s ease-out;
         }
 
