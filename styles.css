@@ -187,7 +187,9 @@ html {
         
         .landing-content {
             position: relative;
-            width: 100%;
+            width: 100cqw;
+            aspect-ratio: 16 / 9;
+            max-width: 100vw;
         }
 
         #preview-video {
@@ -195,9 +197,12 @@ html {
             top: 0;
             left: 0;
             width: 100cqw;
-            height: auto;
+            height: 100%;
+            aspect-ratio: 16 / 9;
             z-index: 10;
             transition: opacity 0.2s ease-out;
+            display: block;
+            overflow: hidden;
         }
 
         .inverted-masked-image {

@@ -1,19 +1,28 @@
 window.addEventListener('load', function() {
+    console.log('Window load event fired');
     const loaderWrapper = document.querySelector(".loader-wrapper");
     const blankScreen = document.querySelector(".blank-screen");
+    console.log('loaderWrapper found:', loaderWrapper);
+    console.log('blankScreen found:', blankScreen);
+    
     if (loaderWrapper) {
         loaderWrapper.style.opacity = '0';
         loaderWrapper.style.transition = 'opacity 0.5s ease';
         blankScreen.style.opacity = '0';
         blankScreen.style.transition = 'opacity 0.5s ease';
         
-        // Trigger video playback when loader fades out
-        startVideoPlayback();
+        // Wait for loader fade-out (500ms) before starting animation
+        setTimeout(() => {
+            console.log('Starting video playback now...');
+            startVideoPlayback();
+        }, 500);
         
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
             blankScreen.style.display = 'none';
-        }, 100);
+        }, 600);
+    } else {
+        console.warn('loaderWrapper not found!');
     }
 });
 
@@ -39,12 +48,6 @@ Promise.all([
     sessionStorage.setItem('play-js', js);
 });
 
-const videoSrc = 'TZ_PlayPage Animation.webm';
-const hiddenVideo = document.createElement('video');
-hiddenVideo.src = videoSrc;
-hiddenVideo.style.display = 'none';
-document.body.appendChild(hiddenVideo);
-
 const images = ['Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
 images.forEach(src => {
     const img = new Image();
@@ -54,9 +57,11 @@ images.forEach(src => {
 //        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
 
-// Ensure video starts paused
+// Ensure animation is paused initially
 if (videoElement) {
-    videoElement.pause();
+    if (videoElement.pause) {
+        videoElement.pause();
+    }
 }
 
 function startVideoPlayback() {
@@ -75,9 +80,24 @@ function startVideoPlayback() {
     smallThumbnails.forEach(el => el.classList.add('animate'));
     
     if (videoElement) {
-        videoElement.play().catch(error => {
-            console.error('Error playing video:', error);
-        });
+        if (videoElement.tagName === 'VIDEO') {
+            // Handle HTML5 video
+            videoElement.play().catch(error => {
+                console.error('Error playing video:', error);
+            });
+        } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
+            // Handle Lottie animation - set src to load and play
+            console.log('Setting dotlottie-wc src attribute');
+            videoElement.setAttribute('src', 'Landing Video - Work.json');
+            if (videoElement.play) {
+                videoElement.play().catch(error => {
+                    console.error('Error playing Lottie:', error);
+                });
+            }
+            // Set fallback timeout from when animation starts (2333ms for 70 frames at 30fps)
+            console.log('Setting fallback timeout for 2333ms from now');
+            setTimeout(handleAnimationComplete, 2333);
+        }
     }
 }
 
@@ -216,7 +236,8 @@ interactiveElements.forEach(element => {
     });
 });
 
-        videoElement.addEventListener('ended', function() {
+        // Handle animation completion (works for both video and Lottie)
+        function handleAnimationComplete() {
             // Fade in other elements immediately
             LinesLandingElement.style.opacity = '1';
             tuckerLandingElement.style.opacity = '1';
@@ -226,17 +247,28 @@ interactiveElements.forEach(element => {
             workLandingElement.style.opacity = '1';
             slayLandingElement.style.opacity = '1';
             
-            // Fade out video after 0.2s delay
+            // Fade out animation after 0.2s delay
             setTimeout(function() {
                 videoElement.style.opacity = '0';
             }, 200);
             
-            // Hide video after everything is done fading
+            // Hide animation after everything is done fading
             setTimeout(function() {
                 videoElement.style.display = 'none';
                 enableRepulsionEffect();
             }, 400);
-        });
+        }
+
+        if (videoElement) {
+            if (videoElement.tagName === 'VIDEO') {
+                // Handle HTML5 video
+                videoElement.addEventListener('ended', handleAnimationComplete);
+            } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
+                // Handle Lottie animation - listen for complete event
+                videoElement.addEventListener('complete', handleAnimationComplete);
+                // Fallback timeout is now set in startVideoPlayback() when animation actually starts
+            }
+        }
 
         // Scaling toggle for nav bar
         const mainContent = document.querySelector('.main-content');
