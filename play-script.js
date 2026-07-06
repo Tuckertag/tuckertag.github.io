@@ -45,7 +45,7 @@ async function initLandingPage() {
         loaderWrapper.style.opacity = '0';
         blankScreen.style.opacity = '0';
         
-        setTimeout(() => startVideoPlayback(), 500);
+        setTimeout(() => startVideoPlayback(), 0);
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
             blankScreen.style.display = 'none';
