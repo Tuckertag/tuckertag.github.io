@@ -539,7 +539,7 @@ html {
             width: 80vw;
             height: 80vh;
             background-color: #000;
-            z-index: 30;
+            z-index: 39;
             transform: scale(1);
             transition: transform 0.5s ease-out;
             overflow-x: hidden;

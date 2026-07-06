@@ -11,16 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
         blankScreen.style.opacity = '0';
         blankScreen.style.transition = 'opacity 0.5s ease';
         
-        // Wait for loader fade-out (500ms) before starting animation
+        // Wait for dotlottie-wc library to be ready before playing video
+        // Add extra delay to ensure custom element initialization
         setTimeout(() => {
             console.log('Starting video playback now...');
             startVideoPlayback();
-        }, 500);
+        }, 800);
         
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
             blankScreen.style.display = 'none';
-        }, 600);
+        }, 900);
     } else {
         console.warn('loaderWrapper not found!');
     }
