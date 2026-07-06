@@ -898,7 +898,7 @@ html {
             margin-left: 3.5cqw;
         }
 
-        .gfx-grid video {
+        .gfx-grid img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
@@ -913,7 +913,7 @@ html {
             margin-left: 3.5cqw;
         }
 
-        .shot-grid video {
+        .shot-grid img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
@@ -943,7 +943,7 @@ html {
             margin-left: 3.5cqw;
         }
 
-        .hero-grid video {
+        .hero-grid img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
@@ -1012,7 +1012,7 @@ html {
             border: .5px solid #ffffff;
         }
 
-        .solo-shot video{
+        .solo-shot img{
             width: 100%;
             height: auto;
         }
@@ -1028,11 +1028,12 @@ html {
 
         .image-grid img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
             border: .5px solid #ffffff;
         }
 
-        .image-grid video {
+        .image-grid img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
@@ -1066,7 +1067,7 @@ html {
             overflow-x: auto;
         }
 
-        .gfx-row video {
+        .gfx-row img {
             width: 100%;
             height: auto;
             border: .5px solid #ffffff;
@@ -1123,7 +1124,8 @@ html {
 
         .fullscreen-overlay img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: contain;
         }
 
 @media (max-width: 820px) {
@@ -1250,7 +1252,7 @@ html {
         font-size: 10pt;
     }
 
-    .solo-shot video{
+    .solo-shot img{
         width: 100%;
         height: auto;
     }
