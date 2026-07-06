@@ -1,4 +1,4 @@
- window.addEventListener('load', function() {
+﻿ window.addEventListener('load', function() {
     const loaderWrapper = document.querySelector(".loader-wrapper");
     const blankScreen = document.querySelector(".blank-screen");
     if (loaderWrapper) {
@@ -30,17 +30,19 @@ var animationData = {"v":"5.12.1","fr":30,"ip":0,"op":59,"w":1920,"h":1080,"nm":
 
     anim = lottie.loadAnimation(params);
 
- const videoElement = document.getElementById('preview-video');
+const videoElement = document.getElementById('preview-video');
 
-// Ensure video starts paused
+// Ensure animation is paused initially
 if (videoElement) {
-    videoElement.pause();
+    if (videoElement.pause) {
+        videoElement.pause();
+    }
 }
 
 function startVideoPlayback() {
-    
     // Trigger fadeInRiseUp animation on all elements with the animation
     document.body.style.overflowY = 'auto'
+    document.body.style.overflowX = 'hidden'
     const introLines = document.querySelectorAll('.intro-line');
     const thumbnailTexts = document.querySelectorAll('.thumbnail-text');
     const bigThumbnails = document.querySelectorAll('.big-thumbnail');
@@ -53,11 +55,24 @@ function startVideoPlayback() {
     smallThumbnails.forEach(el => el.classList.add('animate'));
     
     if (videoElement) {
-        setTimeout(() => {
-        videoElement.play().catch(error => {
-            console.error('Error playing video:', error);
-        });
-        }, 100);
+        if (videoElement.tagName === 'VIDEO') {
+            // Handle HTML5 video
+            videoElement.play().catch(error => {
+                console.error('Error playing video:', error);
+            });
+        } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
+            // Handle Lottie animation - set src to load and play
+            console.log('Setting dotlottie-wc src attribute');
+            videoElement.setAttribute('src', 'Landing Video - Play.json');
+            if (videoElement.play) {
+                videoElement.play().catch(error => {
+                    console.error('Error playing Lottie:', error);
+                });
+            }
+            // Set fallback timeout from when animation starts (2333ms for 70 frames at 30fps)
+            console.log('Setting fallback timeout for 2333ms from now');
+            setTimeout(handleAnimationComplete, 2333);
+        }
     }
 }
 
@@ -267,7 +282,7 @@ interactiveElements.forEach(element => {
         const projectCloseBtn = document.querySelector('.project-close-btn');
         projectCloseBtn.addEventListener('click', closeProjectWindow);
 
-        videoElement.addEventListener('ended', function() {
+        function handleAnimationComplete() {
             // Fade in other elements immediately
             LineLandingElement.style.opacity = '1';
             workLandingElement.style.opacity = '1';
@@ -285,4 +300,16 @@ interactiveElements.forEach(element => {
                 videoElement.style.display = 'none';
                 enableRepulsionEffect();
             }, 400);
-        });
+        }
+        
+
+        if (videoElement) {
+            if (videoElement.tagName === 'VIDEO') {
+                // Handle HTML5 video
+                videoElement.addEventListener('ended', handleAnimationComplete);
+            } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
+                // Handle Lottie animation - listen for complete event
+                videoElement.addEventListener('complete', handleAnimationComplete);
+                // Fallback timeout is now set in startVideoPlayback() when animation actually starts
+            }
+        }
