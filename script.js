@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM content loaded');
+window.addEventListener('load', function() {
+    console.log('Window load event fired');
     const loaderWrapper = document.querySelector(".loader-wrapper");
     const blankScreen = document.querySelector(".blank-screen");
     console.log('loaderWrapper found:', loaderWrapper);
@@ -11,17 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         blankScreen.style.opacity = '0';
         blankScreen.style.transition = 'opacity 0.5s ease';
         
-        // Wait for dotlottie-wc library to be ready before playing video
-        // Add extra delay to ensure custom element initialization
+        // Wait for loader fade-out (500ms) before starting animation
         setTimeout(() => {
             console.log('Starting video playback now...');
             startVideoPlayback();
-        }, 800);
+        }, 500);
         
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
             blankScreen.style.display = 'none';
-        }, 900);
+        }, 600);
     } else {
         console.warn('loaderWrapper not found!');
     }
@@ -356,11 +355,9 @@ interactiveElements.forEach(element => {
         });
 
         const projectBackground = document.querySelector('.project-background');
-        const closeContainer = document.querySelector('.close-button-container');
 
         function closeProjectWindow() {
             projectBackground.style.display = 'none';
-            closeContainer.style.display = 'none';
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
@@ -378,7 +375,6 @@ interactiveElements.forEach(element => {
         
         function openProjectWindow(index) {
             projectBackground.style.display = 'flex';
-            closeContainer.style.display = 'flex';
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
