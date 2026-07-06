@@ -12,7 +12,7 @@ html {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 150vw;
             height: 150vh;
             background-color: #000;
             z-index: 999;
@@ -515,7 +515,7 @@ html {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 150vw;
             height: 150vh;
             background-color: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(5px);
