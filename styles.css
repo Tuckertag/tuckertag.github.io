@@ -1032,6 +1032,13 @@ html {
             border: .5px solid #ffffff;
         }
 
+        .image-grid video {
+            width: 100%;
+            height: auto;
+            border: .5px solid #ffffff;
+        }
+
+
         .solo-image {
             left: 0;
             margin-left: 3.5cqw;
