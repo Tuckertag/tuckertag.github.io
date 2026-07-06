@@ -1,19 +1,49 @@
-﻿ window.addEventListener('load', function() {
+﻿// 1. Reusable helper to find an element
+function waitForElement(selector) {
+    return new Promise((resolve) => {
+        const el = document.querySelector(selector);
+        if (el) return resolve(el);
+
+        const observer = new MutationObserver((mutations, obs) => {
+            const el = document.querySelector(selector);
+            if (el) {
+                resolve(el);
+                obs.disconnect();
+            }
+        });
+
+        observer.observe(document.body, { childList: true, subtree: true });
+    });
+}
+
+// 2. Your modified logic
+// Replace '.play-content' with the specific element you are waiting for
+waitForElement('.play-content').then(() => {
+    console.log('Play content detected, starting transition sequence...');
+
     const loaderWrapper = document.querySelector(".loader-wrapper");
     const blankScreen = document.querySelector(".blank-screen");
+
     if (loaderWrapper) {
         loaderWrapper.style.opacity = '0';
         loaderWrapper.style.transition = 'opacity 0.5s ease';
-        blankScreen.style.opacity = '0';
-        blankScreen.style.transition = 'opacity 0.5s ease';
         
-        // Trigger video playback when loader fades out
-        startVideoPlayback();
-        
+        if (blankScreen) {
+            blankScreen.style.opacity = '0';
+            blankScreen.style.transition = 'opacity 0.5s ease';
+        }
+
+        // Wait for loader fade-out
+        setTimeout(() => {
+            console.log('Starting video playback now...');
+            startVideoPlayback();
+        }, 500);
+
+        // Remove from DOM
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
-            blankScreen.style.display = 'none';
-        }, 100);
+            if (blankScreen) blankScreen.style.display = 'none';
+        }, 600);
     }
 });
 
