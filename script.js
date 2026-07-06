@@ -107,7 +107,7 @@ function startVideoPlayback() {
         const makeLandingElement = document.getElementById('make-landing');
         const itLandingElement = document.getElementById('it-landing');
         const workLandingElement = document.getElementById('work-landing');
-        const slayLandingElement = document.getElementById('slay-landing');
+        //const slayLandingElement = document.getElementById('slay-landing');
 
         // Set initial opacity to 0 for images so they're hidden until video ends
         LinesLandingElement.style.opacity = '0';
@@ -116,7 +116,7 @@ function startVideoPlayback() {
         makeLandingElement.style.opacity = '0';
         itLandingElement.style.opacity = '0';
         workLandingElement.style.opacity = '0';
-        slayLandingElement.style.opacity = '0';
+        //slayLandingElement.style.opacity = '0';
 
         const interactiveElements = [
             tuckerLandingElement,
@@ -124,7 +124,7 @@ function startVideoPlayback() {
             makeLandingElement,
             itLandingElement,
             workLandingElement,
-            slayLandingElement
+            //slayLandingElement
         ];
 
         // Define custom bounding boxes, sizes, and origins for each element
@@ -160,13 +160,13 @@ function startVideoPlayback() {
                 height: window.innerWidth * (153/1920), 
                 originX: () => window.innerWidth * (549/1920),
                 originY: () => window.innerWidth * (480/1920)
-            },
-            'slay-landing': { 
-                width: window.innerWidth * (183/1920), 
-                height: window.innerWidth * (35/1920), 
-                originX: () => window.innerWidth * (956/1920),
-                originY: () => window.innerWidth * (535/1920)
             }
+            //'slay-landing': { 
+            //    width: window.innerWidth * (183/1920), 
+            //    height: window.innerWidth * (35/1920), 
+            //    originX: () => window.innerWidth * (956/1920),
+            //    originY: () => window.innerWidth * (535/1920)
+            //}
         };
 
         // Store state for each element
@@ -245,7 +245,7 @@ interactiveElements.forEach(element => {
             makeLandingElement.style.opacity = '1';
             itLandingElement.style.opacity = '1';
             workLandingElement.style.opacity = '1';
-            slayLandingElement.style.opacity = '1';
+            //slayLandingElement.style.opacity = '1';
             
             // Fade out animation after 0.2s delay
             setTimeout(function() {
