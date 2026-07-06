@@ -355,9 +355,11 @@ interactiveElements.forEach(element => {
         });
 
         const projectBackground = document.querySelector('.project-background');
+        const closeContainer = document.querySelector('.close-button-container');
 
         function closeProjectWindow() {
             projectBackground.style.display = 'none';
+            closeContainer.style.display = 'none';
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });
@@ -375,6 +377,7 @@ interactiveElements.forEach(element => {
         
         function openProjectWindow(index) {
             projectBackground.style.display = 'flex';
+            closeContainer.style.display = 'flex';
             projects.forEach(project => {
                 project.content.style.display = 'none';
             });

@@ -522,6 +522,16 @@ html {
             z-index: 25;
         }
 
+        .close-button-container {
+            display: none;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            right: 0px;
+            z-index: 35;
+        }
+
         .project-window {
             position: fixed;
             top: 10vh;
