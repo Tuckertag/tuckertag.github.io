@@ -1,5 +1,5 @@
-window.addEventListener('load', function() {
-    console.log('Window load event fired');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM content loaded');
     const loaderWrapper = document.querySelector(".loader-wrapper");
     const blankScreen = document.querySelector(".blank-screen");
     console.log('loaderWrapper found:', loaderWrapper);
@@ -39,18 +39,20 @@ var animationData = {"v":"5.12.1","fr":30,"ip":0,"op":59,"w":1920,"h":1080,"nm":
 
     anim = lottie.loadAnimation(params);
 
-// Lazy-load play.html and play-script.js only when the play tab is accessed
-function lazyLoadPlayResources() {
-    if (!sessionStorage.getItem('play-html')) {
-        Promise.all([
-            fetch('play.html').then(r => r.text()),
-            fetch('play-script.js').then(r => r.text())
-        ]).then(([html, js]) => {
-            sessionStorage.setItem('play-html', html);
-            sessionStorage.setItem('play-js', js);
-        });
-    }
-}
+// Load 3 files in the background
+Promise.all([
+    fetch('play.html').then(r => r.text()),
+    fetch('play-script.js').then(r => r.text())
+]).then(([html, js]) => {
+    sessionStorage.setItem('play-html', html);
+    sessionStorage.setItem('play-js', js);
+});
+
+const images = ['Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
+images.forEach(src => {
+    const img = new Image();
+    img.src = src; // Browser loads it in background
+});
 
 //        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
@@ -371,32 +373,6 @@ interactiveElements.forEach(element => {
         const projectYear = document.querySelector('.project-year');
         const projectWindow = document.querySelector('.project-window');
         
-        // Track which projects have had their images loaded
-        const loadedProjectImages = new Set();
-        
-        // Lazy-load images for the opened project
-        function lazyLoadProjectImages(index) {
-            if (loadedProjectImages.has(index)) return; // Already loaded
-            
-            loadedProjectImages.add(index);
-            const projectContent = projects[index].content;
-            
-            // Find all images in this project that haven't been loaded yet
-            const images = projectContent.querySelectorAll('img[data-src]');
-            images.forEach(img => {
-                img.src = img.getAttribute('data-src');
-                img.removeAttribute('data-src');
-            });
-            
-            // Also load regular src images that exist
-            const regularImages = projectContent.querySelectorAll('img:not([data-src])');
-            regularImages.forEach(img => {
-                if (!img.src || img.src === '') return;
-                // Just accessing the src in the DOM makes browser load it
-                const tempSrc = img.src;
-            });
-        }
-        
         function openProjectWindow(index) {
             projectBackground.style.display = 'flex';
             projects.forEach(project => {
@@ -407,9 +383,6 @@ interactiveElements.forEach(element => {
             projectText.textContent=projects[index].name;
             projectYear.textContent = projects[index].year;
             document.body.style.overflow = 'hidden';
-            
-            // Lazy-load images for this project
-            lazyLoadProjectImages(index);
         }
 
         // Calculate scale on load and on window resize
@@ -420,9 +393,6 @@ interactiveElements.forEach(element => {
         navToggleBtn.addEventListener('click', toggleNavBar);
         innerNavToggleBtn.addEventListener('click', toggleNavBar);
         projectCloseBtn.addEventListener('click', closeProjectWindow);
-        
-        // Add play tab click listener to lazy-load play resources
-        playTab.addEventListener('click', lazyLoadPlayResources);
 
 //        const nextProject = document.querySelector('.next-project');
 //        const previousProject = document.querySelector('previous-project');
