@@ -98,15 +98,21 @@ function startVideoPlayback() {
                 console.error('Error playing video:', error);
             });
         } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
-            // Handle Lottie animation - set src to load and play
-            console.log('Setting dotlottie-wc src attribute');
-            videoElement.setAttribute('src', 'Landing Video - Play.json');
-            if (videoElement.play) {
-                videoElement.play().catch(error => {
-                    console.error('Error playing Lottie:', error);
-                });
+            // Handle Lottie animation - trigger play on the web component
+            console.log('Playing dotlottie-wc animation');
+            try {
+                // Try calling play() directly on the component
+                if (typeof videoElement.play === 'function') {
+                    videoElement.play();
+                } else if (videoElement.dotLottie && typeof videoElement.dotLottie.play === 'function') {
+                    // Alternative API if available
+                    videoElement.dotLottie.play();
+                }
+                console.log('Play command sent to dotlottie-wc');
+            } catch (error) {
+                console.error('Error playing Lottie:', error);
             }
-            // Set fallback timeout from when animation starts (2333ms for 70 frames at 30fps)
+            // Set fallback timeout (2333ms for 70 frames at 30fps)
             console.log('Setting fallback timeout for 2333ms from now');
             setTimeout(handleAnimationComplete, 2333);
         }
