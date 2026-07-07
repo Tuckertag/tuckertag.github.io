@@ -508,21 +508,31 @@ interactiveElements.forEach(element => {
         // Initialize on page load
         initializeCarousels();
 
-const projectImages = document.querySelectorAll('.project-window img');
+const projectImages = document.querySelectorAll('.project-window .fullscreen');
 
-projectImages.forEach(img => {
-    img.addEventListener('click', () => {
-        fullscreenImage(img);
+projectImages.forEach(el => {
+    el.addEventListener('click', () => {
+        fullscreenElement(el);
     });
 });
 
-function fullscreenImage(img) {
+function fullscreenElement(el) {
     const fullscreenOverlay = document.createElement('div');
     fullscreenOverlay.classList.add('fullscreen-overlay');
-    const fullscreenImg = document.createElement('img');
-    fullscreenImg.src = img.src;
-    fullscreenImg.classList.add('fullscreen-image');
-    fullscreenOverlay.appendChild(fullscreenImg);
+    
+    let fullscreenEl;
+    
+    if (el.tagName === 'IMG') {
+        fullscreenEl = document.createElement('img');
+        fullscreenEl.src = el.src;
+        fullscreenEl.classList.add('fullscreen-image');
+    } else if (el.tagName === 'VIDEO') {
+        fullscreenEl = el.cloneNode(true);
+        fullscreenEl.classList.add('fullscreen-image');
+        fullscreenEl.autoplay = true;
+    }
+    
+    fullscreenOverlay.appendChild(fullscreenEl);
     document.body.appendChild(fullscreenOverlay);
 
     fullscreenOverlay.addEventListener('click', () => {
