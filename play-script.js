@@ -76,6 +76,32 @@ if (videoElement) {
     }
 }
 
+function playLottieAnimation() {
+    if (!videoElement) return;
+    
+    console.log('Attempting to play Lottie animation');
+    
+    // Wait for the web component to be ready
+    const attemptPlay = () => {
+        try {
+            if (typeof videoElement.play === 'function') {
+                videoElement.play();
+                console.log('Successfully called play() on dotlottie-wc');
+            } else if (videoElement.dotLottie && typeof videoElement.dotLottie.play === 'function') {
+                videoElement.dotLottie.play();
+                console.log('Successfully called dotLottie.play()');
+            } else {
+                console.warn('play() method not yet available, will retry');
+                setTimeout(attemptPlay, 50);
+            }
+        } catch (error) {
+            console.error('Error playing Lottie:', error);
+        }
+    };
+    
+    attemptPlay();
+}
+
 function startVideoPlayback() {
     // Trigger fadeInRiseUp animation on all elements with the animation
     document.body.style.overflowY = 'auto'
@@ -98,20 +124,8 @@ function startVideoPlayback() {
                 console.error('Error playing video:', error);
             });
         } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
-            // Handle Lottie animation - trigger play on the web component
-            console.log('Playing dotlottie-wc animation');
-            try {
-                // Try calling play() directly on the component
-                if (typeof videoElement.play === 'function') {
-                    videoElement.play();
-                } else if (videoElement.dotLottie && typeof videoElement.dotLottie.play === 'function') {
-                    // Alternative API if available
-                    videoElement.dotLottie.play();
-                }
-                console.log('Play command sent to dotlottie-wc');
-            } catch (error) {
-                console.error('Error playing Lottie:', error);
-            }
+            // Play the Lottie animation with initialization check
+            playLottieAnimation();
             // Set fallback timeout (2333ms for 70 frames at 30fps)
             console.log('Setting fallback timeout for 2333ms from now');
             setTimeout(handleAnimationComplete, 2333);
