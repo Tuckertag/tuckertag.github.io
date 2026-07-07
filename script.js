@@ -45,7 +45,7 @@ async function initLandingPage() {
         loaderWrapper.style.opacity = '0';
         blankScreen.style.opacity = '0';
         
-        setTimeout(() => startVideoPlayback(), 500);
+        setTimeout(() => startVideoPlayback(), 0);
         setTimeout(() => {
             loaderWrapper.style.display = 'none';
             blankScreen.style.display = 'none';
@@ -67,22 +67,6 @@ var animationData = {"v":"5.12.1","fr":30,"ip":0,"op":59,"w":1920,"h":1080,"nm":
 
     anim = lottie.loadAnimation(params);
 
-// Load 3 files in the background
-Promise.all([
-    fetch('play.html').then(r => r.text()),
-    fetch('play-script.js').then(r => r.text())
-]).then(([html, js]) => {
-    sessionStorage.setItem('play-html', html);
-    sessionStorage.setItem('play-js', js);
-});
-
-const images = ['Images/Project Thumbnails/01_Speed_Racer_Title.png', 'Images/Project Thumbnails/One Piece Titles_Master.png'];
-images.forEach(src => {
-    const img = new Image();
-    img.src = src; // Browser loads it in background
-});
-
-//        const nextProject = document.querySelector('.next-project');
 const videoElement = document.getElementById('preview-video');
 
 // Ensure animation is paused initially
@@ -90,6 +74,32 @@ if (videoElement) {
     if (videoElement.pause) {
         videoElement.pause();
     }
+}
+
+function playLottieAnimation() {
+    if (!videoElement) return;
+    
+    console.log('Attempting to play Lottie animation');
+    
+    // Wait for the web component to be ready
+    const attemptPlay = () => {
+        try {
+            if (typeof videoElement.play === 'function') {
+                videoElement.play();
+                console.log('Successfully called play() on dotlottie-wc');
+            } else if (videoElement.dotLottie && typeof videoElement.dotLottie.play === 'function') {
+                videoElement.dotLottie.play();
+                console.log('Successfully called dotLottie.play()');
+            } else {
+                console.warn('play() method not yet available, will retry');
+                setTimeout(attemptPlay, 50);
+            }
+        } catch (error) {
+            console.error('Error playing Lottie:', error);
+        }
+    };
+    
+    attemptPlay();
 }
 
 function startVideoPlayback() {
@@ -114,20 +124,15 @@ function startVideoPlayback() {
                 console.error('Error playing video:', error);
             });
         } else if (videoElement.tagName === 'DOTLOTTIE-WC') {
-            // Handle Lottie animation - set src to load and play
-            console.log('Setting dotlottie-wc src attribute');
-            videoElement.setAttribute('src', 'Landing Video - Work.json');
-            if (videoElement.play) {
-                videoElement.play().catch(error => {
-                    console.error('Error playing Lottie:', error);
-                });
-            }
-            // Set fallback timeout from when animation starts (2333ms for 70 frames at 30fps)
+            // Play the Lottie animation with initialization check
+            playLottieAnimation();
+            // Set fallback timeout (2333ms for 70 frames at 30fps)
             console.log('Setting fallback timeout for 2333ms from now');
             setTimeout(handleAnimationComplete, 2333);
         }
     }
 }
+
 
         const LinesLandingElement = document.getElementById('lines-landing');
         const tuckerLandingElement = document.getElementById('tucker-landing');
