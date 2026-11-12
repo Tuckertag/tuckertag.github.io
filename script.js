@@ -19,6 +19,7 @@ function updateNavScale() {
     const landingWrapper = document.querySelector(".landing-scale-wrapper");
     const contentScale = landingContent.classList.contains("nav-open") ? scale : 1;
     landingWrapper.style.height = `${landingContent.offsetHeight * contentScale}px`;
+    
 }
 window.addEventListener('resize', updateNavScale);
 updateNavScale();
