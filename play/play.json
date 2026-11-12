@@ -106,13 +106,13 @@
                 "type": "image-grid",
                 "images": [
                     {
-                        "src": "/images/speedRacer/Look Dev_20.png"
+                        "src": "/Images/speedRacer/Look Dev_20.png"
                     },
                     {
-                        "src": "/images/speedRacer/Look Dev_21.png"
+                        "src": "/Images/speedRacer/Look Dev_21.png"
                     },
                     {
-                        "src": "/images/speedRacer/Look Dev_22.png"
+                        "src": "/Images/speedRacer/Look Dev_22.png"
                     }
                 ]
             },
