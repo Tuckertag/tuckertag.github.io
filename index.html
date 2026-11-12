@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tucker Ziegler - Work</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preload" href="/Fonts/DIN RegularAlternate.woff" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="script.js" defer></script>
+        <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js" type="module"></script>
+</head>
+<!-- HEY! Are you reading my HTML? -->
+<body>
+    <div id="page-loader" class="loading-overlay" role="status" aria-label="Loading page">
+        <dotlottie-wc id="loading-animation" class="loading-animation" autoplay loop></dotlottie-wc>
+    </div>
+    <div class="site-content">
+        <div id="work"></div>
+<!-- NAV BAR -->
+        <button class="outer-nav-button" onclick="toggleNavbar()">☰</button>
+        <div class="navbar">
+            <button class="inner-nav-button" onclick="toggleNavbar()">→</button>
+            <div class="nav-links">
+                <a href="#work" class="nav-link nav-link-selected">Work</a>
+                <a href="/play" class="nav-link">Play</a>
+                <a href="/tools" class="nav-link">Tools</a>
+                <a href="mailto:tuckerziegler25@gmail.com" class="nav-link">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/tucker.tag/" target="_blank" class="social-link"><i class="fa fa-instagram" style="font-size:30px"></i></a>
+                <a href="https://www.linkedin.com/in/tucker-ziegler-b1ba21239/" target="_blank" class="social-link"><i class="fa fa-linkedin" style="font-size:30px"></i></a>
+                <a href="https://github.com/Tuckertag" target="_blank" class="social-link"><i class="fa fa-github" style="font-size:30px"></i></a>
+            </div>
+        </div>
+<!-- END NAV BAR -->
+<!-- LANDING PAGE  -->
+        <div class="landing-scale-wrapper">
+        <div class="landing-content">
+            <div class="intro-animation">
+                <dotlottie-wc 
+                    id="landing-animation"
+                    src = "/json_animations/TZ_WORK_LANDING.json"
+                    >
+                </dotlottie-wc>
+                <div class="landing-vectors untouchable">
+                    <div class="vector-layer"><img src="landing_vectors/work/underlines.svg"></div>
+                    <div class="vector-layer work-mask"><img src="landing_vectors/work/tucker.svg" class="repulsor"></div>
+                    <div class="vector-layer work-mask"><img src="landing_vectors/work/ziegler.svg" class="repulsor"></div>
+                    <div class="vector-layer work-mask-inverted"><img src="landing_vectors/work/makes.svg" class="repulsor"></div>
+                    <div class="vector-layer work-mask-inverted"><img src="landing_vectors/work/it.svg" class="repulsor"></div>
+                    <div class="vector-layer work-mask-inverted"><img src="landing_vectors/work/work.svg" class="repulsor"></div>
+                </div>
+            </div>
+            <div class="intro-text untouchable">
+                <p class="intro-line">I'm the connection between imagination and execution,</p>
+                <p class="intro-line">turning sleek designs into dynamic animations that will</p>
+                <p class="intro-line">WOW even the most cynical of clients and creative directors.</p>
+            </div>
+            <div class="thumbnail-grid">
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-card">
+                        <img class="thumbnail-image" src="Images/Project Thumbnails/ELF x INDY NASCAR.png">
+                        <p class="thumbnail-text">ELF X INDY NASCAR</p>
+                    </div>
+                </div>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-card">
+                        <img class="thumbnail-image" src="Images/Project Thumbnails/Pepsi Smart Can.png">
+                        <p class="thumbnail-text">PEPSI SMART CAN</p>
+                    </div>
+                </div>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-card">
+                        <img class="thumbnail-image" src="Images/Project Thumbnails/Tenstorrent.png">
+                        <p class="thumbnail-text">TENSTORRENT</p>
+                    </div>
+                </div>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-card">
+                        <img class="thumbnail-image" src="Images/Project Thumbnails/PostCon.png">
+                        <p class="thumbnail-text">POSTCON</p>
+                    </div>
+                </div>
+                <div class="thumbnail-wrapper">
+                    <div class="thumbnail-card">
+                        <img class="thumbnail-image" src="Images/Project Thumbnails/FX on Hulu.png">
+                        <p class="thumbnail-text">FX ON HULU</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                    <a href="#work" class="footer-link-selected footer-links">Work</a>
+                    <a href="/play" class="footer-links">Play</a>
+                    <a href="/tools" class="footer-links">Tools</a>
+                    <a href="mailto:tuckerziegler25@gmail.com" class="footer-links">Contact</a>
+            </div>
+        </div>
+        </div>
+<!-- END LANDING PAGE -->
+<!-- PROJECT WINDOWS -->
+        <div class="project-wrapper closed-project">
+            <div class="project-blur"></div>
+            <div class="project-divider"></div>
+            <button class="close-button" onclick="closeProject()">✕</button>
+            <div class="project-title">
+            </div>
+            <div class="project-year">
+            </div>
+            <div class="project-loader loading-overlay" hidden>
+            </div>
+            <div class="project-window">
+                
+            </div>
+        </div>
+<!-- END PROJECT WINDOWS -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,505 @@
+[
+    {
+    "projectTitle": "ELF X INDY NASCAR",
+    "projectYear": "2026",
+    "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "2 CARS"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "1 DRIVER"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://player.vimeo.com/video/1242960174?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+                "aspectRatio": "16/9"
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "In conjunction with <a href=\"https://pleasecallmechamp.com/project/elf-indy-nascar-2026\" target=\"_blank\" rel=\"noopener noreferrer\">Please Call Me Champ Inc</a>, we created a design and motion piece celebrating Katherine Legge, bringing INDY 500 and NASCAR together through cinematic CG, bold typography, and race temetry-inspired graphics. Built around the idea of two cars and one driver, the film captures the speed, precision, and ambition of her racing story."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "FINAL RENDERS"
+            },
+            {
+                "class": "four-column-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-1.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-2.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-3a.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-3b.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-4.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-6a.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-6b.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-7.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-8.mp4"
+                    },
+                    {
+                        "src": "videos/elf/elf-x-indy-nascar-9.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "EARLY RENDERS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/elf/ELF_SH_004_preview_02.mp4"
+                    },
+                    {
+                        "src": "videos/elf/ELF_SH_004_preview_01.mp4"
+                    },
+                    {
+                        "src": "videos/elf/SH0080_NASCAR_Preview.mp4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectTitle": "PEPSI SMART CAN",
+        "projectYear": "2024",
+        "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "PEPSI"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "SMART CAN"
+                    }
+                ]  
+            },
+            {
+                "class": "carousel-banner",
+                "type": "carousel",
+                "videoSources": [
+                    {
+                        "aspectRatio": "4/3",
+                        "src": "https://player.vimeo.com/video/1053929692?h=b216c4ec79"
+                    },
+                    {
+                        "aspectRatio": "4/3",
+                        "src": "https://player.vimeo.com/video/1053929591?h=dc2fe4a1fb"
+                    },
+                    {
+                        "aspectRatio": "4/3",
+                        "src": "https://player.vimeo.com/video/1053929806?h=ba5b214f12"
+                    }
+                ]
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "PepsiCo is redefining the beverage experience with Pepsi Smart Cans, a futuristic, digital-first evolution of the classic drink. To bring this innovation to life, <a href=\"https://pleasecallmechamp.com/project/smart-cans-pepsi\" target=\"_blank\" rel=\"noopener noreferrer\">Please Call Me Champ Inc</a> was tapped to craft the Boot Up & Power Down motion sequences for the Pepsi Digi Brand Portal - a dynamic, cylindrical interface where content rotates in full 360-degree motion.</br></br>I was brought on to animate the graphics that would appear throughout the boot-up and power-down sequences, and to create some procedural animations for when the can would go into sleep mode."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "ANIMATED GFX"
+            },
+            {
+                "class": "gfx-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_06.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_23.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_35.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_37.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_38.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_39.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_40.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_41.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_44.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_45.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_53.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_59.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_60.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_64.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_67.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_85.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_86.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_gfx_87.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "PROCEDURAL ANIMATIONS"
+            },
+            {
+                "class": "two-column-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/pepsi/PEPSI_Sleepmode_01.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_Sleepmode_02.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_SleepMode_04.mp4"
+                    },
+                    {
+                        "src": "videos/pepsi/PEPSI_SleepMode_05.mp4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectTitle": "TENSTORRENT",
+        "projectYear": "2025",
+        "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "TENSTORRENT"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "DEVELOPER DAY"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://player.vimeo.com/video/1087273800?h=2aab5ec32a",
+                "aspectRatio": "16/9"
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "Tenstorrent is building the future of AI hardware - and Developer Day was the stage to unveil it. <a href=\"https://pleasecallmechamp.com/project/tenstorrent-developer-day\" target=\"_blank\" rel=\"noopener noreferrer\">Please Call Me Champ Inc</a> crafted a bold, future-rustic design and motion system to launch the platform with clarity and edge. <br><br> I was responsible for creating and animating several key elements that would appear on stage during the main title sequence and throughout the event."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "TITLE CARDS"
+            },
+            {
+                "class": "four-column-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Title_DAVID.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Title_JASMINA.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Title_JIM.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Title_MELANIE.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "FINAL SHOTS"
+            },
+            {
+                "class": "two-column-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_SH_020.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Intro_SH_050.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Intro_SH_060.mp4"
+                    },
+                    {
+                        "src": "videos/tenstorrent/2025/Tenstorrent_Intro_City.mp4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectTitle": "POSTMAN",
+        "projectYear": "2024-2025",
+        "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "POSTMAN"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "POSTCON 2025"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://player.vimeo.com/video/1137863191?h=e087e516b6",
+                "aspectRatio": "3/1"
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "This project was done in collaboration with POSTMAN and <a href=\"https://pleasecallmechamp.com/project/postcon-25-postman\" target=\"_blank\" rel=\"noopener noreferrer\">Please Call Me Champ Inc</a> for their POST/CON 2025 event.<br><br>I was brought on to create the master cube rig that was used throughout the entirety of this project, as well as some of the GFX elements that appear throughout the title sequence. I was also brought on to animate one of the heavier shots in the sequence which features a cube built of smaller cubes assembling together."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "GFX ELEMENTS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "/videos/postman/2025/POSTMAN_05.mp4"
+                    },
+                    {
+                        "src": "/videos/postman/2025/POSTMAN_017.mp4"
+                    },
+                    {
+                        "src": "/videos/postman/2025/POSTMAN_021.mp4"
+                    },
+                    {
+                        "src": "/videos/postman/2025/POSTMAN_060.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "FINAL SHOT"
+            },
+            {
+                "class": "shot-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/postman/2025/POSTMAN_SH_06.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "divider-line",
+                "type": "divider"
+            },
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "POSTMAN"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "POSTCON 2024"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://player.vimeo.com/video/985262171?h=e046e2c2aa",
+                "aspectRatio": "3/1"
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "This project was done in collaboration with POSTMAN and <a href=\"https://pleasecallmechamp.com/project/this-project-was-done-in-collaboration-with-postma\" target=\"_blank\" rel=\"noopener noreferrer\">Please Call Me Champ Inc</a> for their POST/CON 2024 event.<br><br>I was brought on to fully rig some elements in the title sequence and to fully animate one of the shots in the title sequence."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "GFX ELEMENTS"
+            },
+            {
+                "class": "gfx-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/postman/2024/POSTMAN_050.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_080.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_090.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_140.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_BOLT.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_2x2_Cube.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "FINAL SHOTS"
+            },
+            {
+                "class": "shot-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "videos/postman/2024/POSTMAN_Shot 2.mp4"
+                    },
+                    {
+                        "src": "videos/postman/2024/POSTMAN_Shot 8.mp4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "projectTitle": "FX ON HULU",
+        "projectYear": "2023",
+        "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "FX ON HULU"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "PROMOTIONAL VIDEO"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://player.vimeo.com/video/796039239?h=cd9765c044",
+                "aspectRatio": "1/1"
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "FX offers high-quality television, available at the palm of your hand with Hulu. I created this promo to showcase the wealth of content available at any second with FX on Hulu."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "STYLE FRAMES"
+            },
+            {
+                "class": "gfx-grid",
+                "type": "image-grid",
+                "images": [
+                    {
+                        "src": "Images/fx-hulu/Styleframe+1.2.png"
+                    },
+                    {
+                        "src": "Images/fx-hulu/Styleframe+1.3.png"
+                    },
+                    {
+                        "src": "Images/fx-hulu/Styleframe+2.png"
+                    },
+                    {
+                        "src": "Images/fx-hulu/Styleframe+2.2.png"
+                    },
+                    {
+                        "src": "Images/fx-hulu/Styleframe+3.png"
+                    },
+                    {
+                        "src": "Images/fx-hulu/Styleframe+3.1.png"
+                    }
+                ]
+            }
+        ]
+    }
+]

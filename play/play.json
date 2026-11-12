@@ -1,0 +1,264 @@
+[ 
+        {
+        "projectTitle": "SPEED RACER",
+        "projectYear": "2026",
+        "projectContent": [
+            {
+                "class": "hero-text",
+                "type": "hero-text",
+                "headings": [
+                    {
+                        "class": "hero-text-one",
+                        "text": "SPEED RACER"
+                    },
+                    {
+                        "class": "hero-text-two",
+                        "text": "RENDERS"
+                    }
+                ]  
+            },
+            {
+                "class": "banner-images",
+                "type": "image-grid",
+                "images": [
+                    {
+                        "src": "/Images/speedRacer/01_Speed_Racer_Title.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/02_Thunderhead_SH01.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/03_Fuji_Helexicon_SH01.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/04_CasaCristo_SH01_Cortega_Pillars.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/05_CasaCristo_SH02_Zanubian_Desert.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/06_CasaCristo_SH03_Maltese_Mountains.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/07_CasaCristo_SH04_Maltese_Ice_Caves_02.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/08_CasaCristo_SH05_Maltese_Mountains.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/09_GrandPrix_SH01_Drop.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/10_GrandPrix_SH02_Double_Happiness.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/11_GrandPrix_SH03_Arrows.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/12_GrandPrix_SH04_Finish_Line.png"
+                    },
+                    {
+                        "src": "/Images/speedRacer/13_Mach_Go_Go_Go.png"
+                    }
+                ]
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "You don't climb into a T-180 to be a driver. You do it because you're driven.<br><br>The greatest movie of all time, Speed Racer, has been getting the star treatment from Warner Brothers with a theatrical rerelease and a 4K Blu-ray release. To celebrate, I started working on these renders inspired by the Wachowskis' 2008 masterpiece."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "CARS"
+            },
+            {
+                "class": "three-column-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "/videos/speedRacer/Mach5_Turntable.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/ShootingStar_Turntable.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/RoyaltonGRX_Turntable.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/Mach4_Turntable.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/HydraCellStreetCar_Turntable.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/TogokahnStreetCar_Turntable.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "EARLY RENDERS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "image-grid",
+                "images": [
+                    {
+                        "src": "/images/speedRacer/Look Dev_20.png"
+                    },
+                    {
+                        "src": "/images/speedRacer/Look Dev_21.png"
+                    },
+                    {
+                        "src": "/images/speedRacer/Look Dev_22.png"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "MOTION TESTS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "/videos/speedRacer/MotionTest_1.mp4"
+                    },{
+                        "src": "/videos/speedRacer/MotionTest_02.mp4"
+                    },
+                    {
+                        "src": "/videos/speedRacer/Motion Test_03.mp4"
+                    }
+                ]
+            }
+        ]
+        },
+        {
+        "projectTitle": "ONE PIECE",
+        "projectYear": "2026",
+        "projectContent": [
+            {
+                    "class": "hero-text",
+                    "type": "hero-text",
+                    "headings": [
+                        {
+                            "class": "hero-text-one",
+                            "text": "ONE PIECE"
+                        },
+                        {
+                            "class": "hero-text-two",
+                            "text": "TITLE CARDS"
+                        }
+                    ]  
+            },
+            {
+                "class": "carousel-banner",
+                "type": "carousel",
+                "videoSources": [
+                    {
+                        "aspectRatio": "16/9",
+                        "src": "https://www.youtube.com/embed/ScTPPMU860I?rel=0"
+                    },
+                    {
+                        "aspectRatio": "16/9",
+                        "src": "https://www.youtube.com/embed/hGKB-qgvFYA?rel=0"
+                    },
+                    {
+                        "aspectRatio": "16/9",
+                        "src": "https://www.youtube.com/embed/Rjz_sVXQRIw?rel=0"
+                    },
+                    {
+                        "aspectRatio": "16/9",
+                        "src": "https://www.youtube.com/embed/fHcUe8lgleE?rel=0"
+                    }
+                ]
+            },
+            {
+                "class": "project-text",
+                "type": "span",
+                "html": "The Straw Hat Pirates have entered the Grand Line!<br><br>A new world awaits the Straw Hat Pirates as they sail into the Grand Line, a treacherous sea that only the future King of the Pirates can conquer. Inspired by the live-action series, I created this set of animated title cards in the style of the show."
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "MODELS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "/videos/onePiece/Yoru.mp4"
+                    },
+                    {
+                        "src": "/videos/onePiece/Kikoku.mp4"
+                    },
+                    {
+                        "src": "/videos/onePiece/KidArm.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "JOLLY ROGERS"
+            },
+            {
+                "class": "stretch-grid",
+                "type": "video-grid",
+                "videos": [
+                    {
+                        "src": "/videos/onePiece/Heart Pirates.mp4"
+                    },
+                    {
+                        "src": "/videos/onePiece/Kid Pirates.mp4"
+                    },
+                    {
+                        "src": "/videos/onePiece/Kuja Pirates.mp4"
+                    },
+                    {
+                        "src": "/videos/onePiece/Cross Guild.mp4"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "TITLE DESIGNS"
+            },
+            {
+                "class": "two-column-grid",
+                "type": "image-grid",
+                "images": [
+                    {
+                        "src": "/Images/onePiece/HeartPirates_TitleCard.png"
+                    },
+                    {
+                        "src": "/Images/onePiece/KidPirates_TitleCard.png"
+                    },
+                    {
+                        "src": "/Images/onePiece/KujaPirates_TitleCard.png"
+                    },
+                    {
+                        "src": "/Images/onePiece/CrossGuild_TitleCard.png"
+                    }
+                ]
+            },
+            {
+                "class": "project-heading",
+                "type": "heading",
+                "text": "PROCESS VIDEO"
+            },
+            {
+                "class": "banner-video",
+                "type": "vimeo-container",
+                "src": "https://www.youtube.com/embed/MYYdLRq1hzg?rel=0",
+                "aspectRatio": "16/9"
+            }
+        ]
+        }
+]
